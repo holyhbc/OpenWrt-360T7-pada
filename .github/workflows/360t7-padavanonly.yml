@@ -11,6 +11,14 @@
 name: OpenWrt-360T7-padavanonly
 
 
+on:
+  workflow_dispatch:
+    inputs:
+      manual:
+        description: '手动触发一次编译'
+  schedule:
+    - cron: 0 16 * * 5
+    
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: mt7981
