@@ -16,8 +16,20 @@ on:
     inputs:
       manual:
         description: '手动触发一次编译'
+        
+      clean:
+        description: 'clean ccache'
+        default: 'false'
+        
   schedule:
     - cron: 0 16 * * 5
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/360t7-padavanonly.yml'
+      - 'padavanonly-hbc.config'
+   
     
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrtARM
