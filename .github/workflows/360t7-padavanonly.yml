@@ -21,21 +21,21 @@ on:
         description: 'clean ccache'
         default: 'false'
         
-  schedule:
-    - cron: 0 16 * * 5
+  #schedule:
+  #  - cron: 0 16 * * 5
   push:
     branches:
       - main
     paths:
       - '.github/workflows/360t7-padavanonly.yml'
-      - 'padavanonly.config'
+      - '.config'
    
     
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrtARM
   REPO_BRANCH: mt7981
   FEEDS_CONF: feeds.conf
-  CONFIG_FILE: padavanonly.config
+  CONFIG_FILE: .config
   DIY_P1_SH: diy1.sh
   DIY_P2_SH: diy2.sh
   UPLOAD_FIRMWARE: true
