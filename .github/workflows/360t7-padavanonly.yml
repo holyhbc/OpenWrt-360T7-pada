@@ -28,14 +28,14 @@ on:
       - main
     paths:
       - '.github/workflows/360t7-padavanonly.yml'
-      - 'padavanonly.config'
+      - 'padavanonly-hbc.config'
    
     
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrtARM
   REPO_BRANCH: mt7981
   FEEDS_CONF: feeds.conf
-  CONFIG_FILE: padavanonly.config
+  CONFIG_FILE: padavanonly-hbc.config
   DIY_P1_SH: diy1.sh
   DIY_P2_SH: diy2.sh
   UPLOAD_FIRMWARE: true
@@ -93,7 +93,7 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-   
+        cat extra.config >> openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
